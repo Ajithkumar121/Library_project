@@ -1,0 +1,12 @@
+
+  button{  outline: none; border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.5rem 2 rem;
+  background-color:green;
+  color:White;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 15px;}
+

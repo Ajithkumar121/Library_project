@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>BOOKBAR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body style="background-color:Azure">
+<nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#">BOOKBAR</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'Library:index' %}" >Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>g
+      {% if user.is_authenticated %}
+<div style="color:#30D328 "><li>Hi {{user.username}}</li></div>
+<li><a class="my-2 my-sm-0 mr-sm-4" href="{% url 'Library:logout' %}">Logout</a></li>
+{% else %}
+<li><a class="my-2 my-sm-0 mr-sm-4" href="{% url 'Library:registration' %}">Register</a></li>
+<li><a class="my-2 my-sm-0 mr-sm-4" href="{% url 'Library:login' %}">Login</a></li>
+{% endif %}
+      <form action="admin" >
+    <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-4"  type="submit">ADMIN</button>
+</form>
+<!--    <form class="form-inline my-2 my-lg-0">-->
+<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--    </form>-->
+  </div>
+</nav>
+{% block body %}
+{% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+    <style>
+        body {
+        background-image: url("background.jpg");
+        }
+    </style>
+</head>
+<body>
+<h2>REGISTRATION</h2>
+<form method="post" action=" " style="text-align:center;width:100%;">
+    {% csrf_token %}
+    <input style="width:40%;color:blue"  type="text" name="username" placeholder="enter your user name"><br>
+    <input style="width:40%;color:blue" type="text" name="firstname" placeholder=" first name"><br>
+    <input style="width:40%;color:blue" type="text" name="lastname" placeholder="last name"><br>
+    <input style="width:40%;color:blue" type="email" name="email" placeholder="email id"><br>
+    <input style="width:40%;color:blue" type="password" name="password1" placeholder="password"><br>
+    <input style="width:40%;color:blue" type="password" name="password2" placeholder="re-enter password"><br>
+    <button style="color:red" type="submit">Register</button>
+
+
+</form>
+{%for i in messages %}
+
+<h4 style="color:red;text-align:center">{{ i }}</h4>
+{% endfor %}
+</body>
+</html>

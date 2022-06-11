@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+<img src="{{output.img.url}}" width="150" height="200"><br>
+{{output.name}}
+{{output.year}}<br>
+
+{{output.desc}}<br>
+
+<a class="btn btn-outline-success" href="{% url 'Library:update' output.id %}" >Update</a>
+<a class="btn btn-outline-danger" href="{% url 'Library:delete' output.id %}" >Delete</a>
+{{output.pdf}}
+<a href="{{ my_Model_instance.pdf.url }}" download>Click here to download PDF</a>
+{% endblock %}
